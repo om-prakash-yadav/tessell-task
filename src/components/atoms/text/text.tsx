@@ -42,23 +42,23 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>(
 
     const Element = elementType;
 
+    const dynamicStyles = {
+      color: getColorValue(),
+      display: displayMode,
+      userSelect: userSelection,
+      margin: getMarginValue(),
+      textAlign: getTextAlignment(),
+      textDecoration: textDecor || "none",
+    };
+
     return (
       <Element 
         ref={ref}
         {...restProps} 
-        className={`text-component ${getTextClass()}`}
+        className={getTextClass()}
+        style={dynamicStyles}
       >
         {children}
-        <style jsx>{`
-          .text-component {
-            color: ${getColorValue()};
-            display: ${displayMode};
-            user-select: ${userSelection};
-            margin: ${getMarginValue()};
-            text-align: ${getTextAlignment()};
-            text-decoration: ${textDecor || "none"};
-          }
-        `}</style>
       </Element>
     );
   }
