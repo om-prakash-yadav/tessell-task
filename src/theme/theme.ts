@@ -147,6 +147,48 @@ export const ThemeRadio = {
 
 export const ThemeIconButton = {
   className: 'icon-btn',
+  variants: {
+    primary: {
+      default: { iconColor: 'primary-100' as const },
+      hover: { iconColor: 'primary-200' as const },
+      active: { iconColor: 'primary-300' as const },
+      focus: { iconColor: 'primary-100' as const, outlineColor: 'border-focus' as const, outlineWidth: 2 },
+      disabled: { iconColor: 'disabled' as const }
+    },
+    secondary: {
+      default: { iconColor: 'subtler' as const },
+      hover: { iconColor: 'bolder' as const },
+      active: { iconColor: 'primary-100' as const },
+      focus: { iconColor: 'subtler' as const, outlineColor: 'border-focus' as const, outlineWidth: 2 },
+      disabled: { iconColor: 'disabled' as const }
+    },
+    danger: {
+      default: { iconColor: 'danger-200' as const },
+      hover: { iconColor: 'danger-300' as const },
+      active: { iconColor: 'danger-400' as const },
+      focus: { iconColor: 'danger-200' as const, outlineColor: 'border-focus' as const, outlineWidth: 2 },
+      disabled: { iconColor: 'disabled' as const }
+    },
+    success: {
+      default: { iconColor: 'success-200' as const },
+      hover: { iconColor: 'success-300' as const },
+      active: { iconColor: 'success-400' as const },
+      focus: { iconColor: 'success-200' as const, outlineColor: 'border-focus' as const, outlineWidth: 2 },
+      disabled: { iconColor: 'disabled' as const }
+    },
+    warning: {
+      default: { iconColor: 'warning-200' as const },
+      hover: { iconColor: 'warning-300' as const },
+      active: { iconColor: 'warning-400' as const },
+      focus: { iconColor: 'warning-200' as const, outlineColor: 'border-focus' as const, outlineWidth: 2 },
+      disabled: { iconColor: 'disabled' as const }
+    }
+  },
+  sizes: {
+    small: { iconSize: 16, buttonRadius: 4 },
+    medium: { iconSize: 20, buttonRadius: 6 },
+    large: { iconSize: 24, buttonRadius: 8 }
+  }
 };
 
 export const ThemeSpacing = {

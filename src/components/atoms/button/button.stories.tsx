@@ -210,56 +210,6 @@ export const WithTrailingIcons: Story = {
   },
 };
 
-// Button states
-export const ButtonStates: Story = {
-  render: () => (
-    <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
-      <Button $icon="Add" $type="primary" $size="regular">
-        Normal
-      </Button>
-      <Button $icon="Add" $type="primary" $size="regular" $isSelected>
-        Selected
-      </Button>
-      <Button $icon="Add" $type="primary" $size="regular" $isLoading>
-        Loading
-      </Button>
-      <Button $icon="Add" $type="primary" $size="regular" disabled>
-        Disabled
-      </Button>
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Different button states including normal, selected, loading, and disabled.',
-      },
-    },
-  },
-};
-
-// Full width buttons
-export const FullWidthButtons: Story = {
-  render: () => (
-    <div style={{ width: '400px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-      <Button $icon="Add" $type="primary" $size="regular" $isFullWidth>
-        Full Width Primary
-      </Button>
-      <Button $icon="Book" $type="tertiary" $size="regular" $isFullWidth>
-        Full Width Tertiary
-      </Button>
-      <Button $icon="Delete" $type="primary" $size="large" $isFullWidth $trailingIcon="ChevronDown">
-        Full Width with Trailing Icon
-      </Button>
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Full-width buttons that span the entire container width.',
-      },
-    },
-  },
-};
 
 // Complex icon showcase
 export const ComplexIconShowcase: Story = {
