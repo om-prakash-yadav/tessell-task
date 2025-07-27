@@ -9,7 +9,6 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
   argTypes: {
     $renderAs: {
       control: "select",
@@ -55,7 +54,7 @@ export const Default: Story = {
 export const Variants: Story = {
   args: {
     $renderAs: "bodyPrimary",
-    $color: "primary-50",
+    $color: "primary-200",
     children: "This is a bodyPrimary text",
   },
   render: () => (
@@ -67,7 +66,7 @@ export const Variants: Story = {
         "heading/Titles", "Heading/3", "button/large",
       ].map((variant) => (
         <div key={variant} style={{ marginBottom: "16px" }}>
-          <Text $renderAs={variant as TextProps["$renderAs"]}>
+          <Text $renderAs={variant as TextProps["$renderAs"]} >
             {`This is a ${variant} text`}
           </Text>
         </div>
