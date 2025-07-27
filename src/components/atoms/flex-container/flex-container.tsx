@@ -43,27 +43,26 @@ const FlexContainer: React.FC<FlexContainerProps> = ({
     return typeof containerWidth === "number" ? `${containerWidth}px` : containerWidth;
   };
 
+  const dynamicStyles = {
+    display: "flex",
+    backgroundColor: ThemeColors[backgroundColor],
+    flexDirection: flexDirection,
+    justifyContent: justifyItems,
+    alignItems: alignChildren,
+    flexWrap: flexWrap,
+    flex: flexValue,
+    borderRadius: `${cornerRadius}px`,
+    height: getHeightValue(),
+    width: getWidthValue(),
+    padding: `${verticalPadding}px ${horizontalPadding}px`,
+    borderTop: `${topBorderWidth}px solid ${ThemeColors["surface-100"]}`,
+    gap: getGapValue(),
+    marginBottom: getMarginBottom(),
+  };
+
   return (
-    <div {...restProps} className="flex-container">
+    <div {...restProps} className="flex-container" style={dynamicStyles}>
       {children}
-      <style jsx>{`
-        .flex-container {
-          display: flex;
-          background-color: ${ThemeColors[backgroundColor]};
-          flex-direction: ${flexDirection};
-          justify-content: ${justifyItems};
-          align-items: ${alignChildren};
-          flex-wrap: ${flexWrap};
-          flex: ${flexValue};
-          border-radius: ${cornerRadius}px;
-          height: ${getHeightValue()};
-          width: ${getWidthValue()};
-          padding: ${verticalPadding}px ${horizontalPadding}px;
-          border-top: ${topBorderWidth}px solid ${ThemeColors["surface-100"]};
-          gap: ${getGapValue()};
-          margin-bottom: ${getMarginBottom()};
-        }
-      `}</style>
     </div>
   );
 };

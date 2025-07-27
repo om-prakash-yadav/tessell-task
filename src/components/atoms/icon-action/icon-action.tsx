@@ -48,56 +48,71 @@ const IconAction: React.FC<IconActionProps> = (props) => {
     return noBorder ? "none" : `1px solid ${ThemeColors["border-icon-button"]}`;
   };
 
+  const dynamicStyles = {
+    height: `${scaleData.iconSize}px`,
+    width: `${scaleData.iconSize}px`,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: getBorderRadius(),
+    background: 'transparent',
+    transition: 'color 0.2s ease',
+    border: getBorderStyle(),
+    padding: 0,
+    margin: `${spacing}px`,
+    color: getIconTint(),
+    cursor: disabled ? "not-allowed" : "pointer",
+    pointerEvents: disabled ? "none" as const : "auto" as const,
+  };
+
+  const iconStyles = {
+    height: `${scaleData.iconSize}px`,
+    width: `${scaleData.iconSize}px`,
+    display: 'block',
+  };
+
   return (
     <button 
       aria-label={accessibilityLabel} 
       disabled={disabled}
       {...restProps} 
       className="icon-action-button"
+      style={dynamicStyles}
+      onMouseEnter={(e) => {
+        if (!disabled) {
+          e.currentTarget.style.color = getHoverTint();
+        }
+      }}
+      onMouseLeave={(e) => {
+        if (!disabled) {
+          e.currentTarget.style.color = getIconTint();
+        }
+      }}
+      onMouseDown={(e) => {
+        if (!disabled) {
+          e.currentTarget.style.color = getActiveTint();
+        }
+      }}
+      onMouseUp={(e) => {
+        if (!disabled) {
+          e.currentTarget.style.color = getHoverTint();
+        }
+      }}
+      onFocus={(e) => {
+        if (!disabled) {
+          e.currentTarget.style.outline = `${variantData.focus.outlineWidth}px solid ${ThemeColors[variantData.focus.outlineColor]}`;
+          e.currentTarget.style.outlineOffset = '2px';
+        }
+      }}
+      onBlur={(e) => {
+        if (!disabled) {
+          e.currentTarget.style.outline = 'none';
+        }
+      }}
     >
       <span className="icon-container">
-        <IconComponent />
+        <IconComponent style={iconStyles} />
       </span>
-      <style jsx>{`
-        .icon-action-button {
-          height: ${scaleData.iconSize}px;
-          width: ${scaleData.iconSize}px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: ${getBorderRadius()};
-          background: transparent;
-          transition: color 0.2s ease;
-          border: ${getBorderStyle()};
-          padding: 0;
-          margin: ${spacing}px;
-          color: ${getIconTint()};
-          cursor: ${disabled ? "not-allowed" : "pointer"};
-          pointer-events: ${disabled ? "none" : "auto"};
-        }
-
-        .icon-action-button:hover:not(:disabled) {
-          color: ${getHoverTint()};
-        }
-
-        .icon-action-button:focus:not(:disabled) {
-          outline: ${variantData.focus.outlineWidth}px solid ${ThemeColors[variantData.focus.outlineColor]};
-          outline-offset: 2px;
-          animation-delay: 70ms;
-          animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
-          animation-duration: 70ms;
-        }
-
-        .icon-action-button:active:not(:disabled) {
-          color: ${getActiveTint()};
-        }
-
-        .icon-container svg {
-          height: ${scaleData.iconSize}px;
-          width: ${scaleData.iconSize}px;
-          display: block;
-        }
-      `}</style>
     </button>
   );
 };

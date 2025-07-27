@@ -23,16 +23,15 @@ const SpacingDivider: React.FC<SpacingDividerProps> = ({
     return `calc(${horizontalSizeMultiplier} * ${ThemeSpacing.variables.GUTTER})`;
   };
 
+  const dynamicStyles = {
+    backgroundColor: ThemeColors[backgroundTone],
+    width: getElementWidth(),
+    height: getElementHeight(),
+    margin: spacing || '0',
+  };
+
   return (
-    <div aria-hidden="true" {...restProps} className="spacing-divider">
-      <style jsx>{`
-        .spacing-divider {
-          background-color: ${ThemeColors[backgroundTone]};
-          width: ${getElementWidth()};
-          height: ${getElementHeight()};
-          margin: ${spacing || '0'};
-        }
-      `}</style>
+    <div aria-hidden="true" {...restProps} className="spacing-divider" style={dynamicStyles}>
     </div>
   );
 };
