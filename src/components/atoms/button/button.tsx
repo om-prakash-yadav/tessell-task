@@ -1,8 +1,8 @@
 import React from "react";
 import { AppIcons } from "../../../assets/icons";
-import SpacingDivider from "../../atoms/spacing-divider/spacing-divider";
+import SpacingDivider from "../spacing-divider/spacing-divider";
 import type { ButtonProps } from "./button-types";
-import FlexContainer from "../../atoms/flex-container/flex-container";
+import FlexContainer from "../flex-container/flex-container";
 import { AppDefaultTheme } from "../../../theme/theme";
 
 export const Button: React.FC<ButtonProps> = ({

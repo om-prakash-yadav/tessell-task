@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { Button } from './button';
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/Molecules/Button',
+  title: 'ATOMS/Button',
   component: Button,
   parameters: {
     layout: 'centered',
