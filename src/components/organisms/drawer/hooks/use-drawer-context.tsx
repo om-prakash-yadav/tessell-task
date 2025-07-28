@@ -5,6 +5,7 @@ interface DrawerContextType {
   toggleDrawer: () => void;
   openDrawer: () => void;
   closeDrawer: () => void;
+  isTabletOrMobile?: boolean;
 }
 
 export const DrawerContext = createContext<DrawerContextType | undefined>(undefined);
@@ -20,6 +21,7 @@ export const useDrawerContext = () => {
       toggleDrawer: () => setIsDrawerOpen(prev => !prev),
       openDrawer: () => setIsDrawerOpen(true),
       closeDrawer: () => setIsDrawerOpen(false),
+      isTabletOrMobile: false,
     };
   }
   return context;
