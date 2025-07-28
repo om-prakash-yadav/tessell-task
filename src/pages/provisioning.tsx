@@ -3,7 +3,6 @@ import FlexContainer from "../components/atoms/flex-container/flex-container";
 import HeaderTitle from "../components/organisms/header-title/header-title";
 import Header from "../components/organisms/header/header";
 import SpacingDivider from "../components/atoms/spacing-divider/spacing-divider";
-import { useDrawerContext } from "../components/organisms/drawer/hooks/use-drawer-context";
 import AdditionalSettingsSection from "./sections/additional-settings-section/additional-settings-section";
 import ServiceDetailsSection from "./sections/service-details-section/service-details-section";
 import StepsSection from "./sections/steps-section/steps-section";
@@ -11,10 +10,8 @@ import * as S from "./common-style";
 import { useProvisioning } from "./use-provisioning";
 import { ProvisioningProvider } from "./context/provisioning-context";
 import { memo } from "react";
-import { ThemeSpacing } from "../theme/theme";
 
 const ProvisioningComp: React.FC = () => {
-  const { toggleDrawer } = useDrawerContext();
 
   const { steps, currentStepIndex } = useProvisioning();
 
@@ -47,7 +44,7 @@ const ProvisioningComp: React.FC = () => {
             Code
           </Button>
         }
-        onDismiss={toggleDrawer}
+        onDismiss={()=>{}}
       />
       <SpacingDivider verticalSizeMultiplier={1.5} />
       <S.ContentArea>

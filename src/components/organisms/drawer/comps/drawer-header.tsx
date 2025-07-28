@@ -28,16 +28,16 @@ const DrawerHeader = () => {
         <AppIcons.TessellTypoLogo height={20} width={40} />
       </FlexContainer>
       <FlexContainer
-        containerHeight="auto"
+        containerHeight={32}
         containerWidth={32}
         justifyItems="center"
         alignChildren="center"
       >
         <IconAction
           iconKey="Drawer"
-          buttonScale="medium"
+          buttonScale="small"
           accessibilityLabel="Drawer Close"
-          buttonStyle="primary" 
+          buttonStyle="secondary" 
           onClick={toggleDrawer}
         />
       </FlexContainer>

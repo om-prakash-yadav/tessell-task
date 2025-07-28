@@ -9,6 +9,7 @@ import { ReactComponent as Code } from "./code.svg";
 import { ReactComponent as Close } from "./close.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
 import { ReactComponent as ChevronLeft } from "./chevron-left.svg";
+import { ReactComponent as ChevronRight } from "./chevron-right.svg";
 import { ReactComponent as Chart } from "./chart.svg";
 import { ReactComponent as CheckboxCheck } from "./checkbox-check.svg";
 import { ReactComponent as CheckboxMinus } from "./checkbox-minus.svg";
@@ -53,6 +54,7 @@ export const AppIcons = {
   CmdE,
   ChevronDown,
   ChevronLeft,
+  ChevronRight,
   DataFlix,
   Delete,
   Drawer,

@@ -88,7 +88,6 @@ const Drawer: React.FC<DrawerProps> = ({
     borderRadius: '50%',
     backgroundColor: ThemeColors['surface-0'],
     transition: 'transform 0.3s ease-in-out',
-    opacity: isDrawerOpen ? 1 : 0,
   };
 
   return (
@@ -130,7 +129,7 @@ const Drawer: React.FC<DrawerProps> = ({
       </FlexContainer>
       <div style={closeButtonWrapperStyles}>
         <IconAction
-          iconKey="ChevronLeft"
+          iconKey={isDrawerOpen ? "ChevronLeft" : "ChevronRight"}
           noBorder={false}
           accessibilityLabel="Close Menu"
           buttonScale="medium"
