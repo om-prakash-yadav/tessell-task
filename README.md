@@ -1,46 +1,217 @@
-# Getting Started with Create React App
+# Tessell Task - Database Provisioning Interface
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React TypeScript application built for database provisioning management with a comprehensive component library and intuitive user interface.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **Database Provisioning Interface**: Complete UI for Oracle Server provisioning
+- **Component-Driven Architecture**: Atomic design system with atoms, molecules, and organisms
+- **TypeScript Support**: Full type safety throughout the application
+- **Storybook Integration**: Interactive component documentation and testing
+- **Styled-JSX**: CSS-in-JS styling with optimized performance
+- **Responsive Design**: Mobile-first approach with flexible layouts
+- **Context Management**: Efficient state management with React Context
+- **Custom Hooks**: Reusable logic with custom React hooks
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Framework**: React 19.1.0
+- **Language**: TypeScript 4.9.5
+- **Build Tool**: Create React App with CRACO
+- **Styling**: Styled-JSX 5.1.7
+- **Testing**: Jest + React Testing Library
+- **Documentation**: Storybook 9.0.18
+- **Date Handling**: Moment.js
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📁 Project Structure
 
-### `npm test`
+```
+src/
+├── components/           # Component library
+│   ├── atoms/           # Basic building blocks
+│   │   ├── button/      # Button component
+│   │   ├── checkbox/    # Checkbox component
+│   │   ├── input-field/ # Input field component
+│   │   └── ...
+│   ├── molecules/       # Composed components
+│   │   ├── breadcrumbs/ # Navigation breadcrumbs
+│   │   ├── radio/       # Radio button groups
+│   │   └── ...
+│   └── organisms/       # Complex components
+│       ├── drawer/      # Navigation drawer
+│       ├── header/      # Application header
+│       ├── table/       # Data tables
+│       └── ...
+├── pages/               # Application pages
+│   ├── provisioning.tsx # Main provisioning interface
+│   ├── context/         # Page-specific contexts
+│   ├── hooks/           # Custom hooks
+│   └── sections/        # Page sections
+├── resources/           # Static assets
+│   └── icons/           # SVG icon library
+└── theme/               # Design system
+    ├── theme.ts         # Theme configuration
+    ├── constants/       # Theme constants
+    └── types/           # Theme type definitions
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚦 Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (v16 or higher)
+- npm or yarn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+```bash
+git clone https://github.com/om-prakash-yadav/tessell-task.git
+cd tessell-task
+```
 
-### `npm run eject`
+2. Install dependencies:
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Start the development server:
+```bash
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application will open at [http://localhost:3000](http://localhost:3000)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 📜 Available Scripts
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Development
 
-## Learn More
+- **`npm start`** - Runs the app in development mode
+- **`npm test`** - Launches the test runner in interactive watch mode
+- **`npm run build`** - Builds the app for production
+- **`npm run storybook`** - Starts Storybook on port 6006
+- **`npm run build-storybook`** - Builds Storybook for deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Testing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The project includes comprehensive testing setup with:
+- Unit tests with Jest
+- Component tests with React Testing Library
+- Interactive testing with Storybook
+
+## 🎨 Component Library
+
+The application follows atomic design principles:
+
+### Atoms
+- **Button**: Customizable button component with variants
+- **Checkbox**: Checkbox input with custom styling
+- **Input Field**: Text input with validation support
+- **Flex Container**: Layout utility component
+- **Text**: Typography component with theme integration
+
+### Molecules
+- **Breadcrumbs**: Navigation breadcrumb component
+- **Radio**: Radio button group component
+- **Stepper**: Multi-step process indicator
+
+### Organisms
+- **Drawer**: Collapsible navigation sidebar
+- **Header**: Application header with user info and breadcrumbs
+- **Table**: Data table with sorting and pagination
+- **Dropdown**: Advanced dropdown with search and selection
+
+## 🎯 Key Features
+
+### Database Provisioning
+- Step-by-step provisioning workflow
+- Application configuration panel
+- Advanced configuration settings
+- Real-time validation and feedback
+
+### Design System
+- Consistent theme across all components
+- Responsive breakpoints and media queries
+- Icon library with custom SVG icons
+- Color palette and typography scales
+
+### State Management
+- Context-based state management
+- Custom hooks for complex logic
+- Efficient re-rendering with memoization
+
+## 🔧 Configuration
+
+### CRACO Configuration
+The project uses CRACO (Create React App Configuration Override) for:
+- Styled-JSX babel plugin integration
+- Custom webpack configurations
+- Build optimization
+
+### TypeScript Configuration
+- Strict type checking enabled
+- Custom type definitions for styled-jsx
+- Path aliases for cleaner imports
+
+## 🚀 Deployment
+
+### Build for Production
+```bash
+npm run build
+```
+
+This creates an optimized production build in the `build` folder.
+
+### Deploy to GitHub Pages
+```bash
+# Build the project
+npm run build
+
+# Deploy to gh-pages branch
+npx gh-pages -d build
+```
+
+## 📖 Storybook Documentation
+
+Access the interactive component documentation:
+
+```bash
+npm run storybook
+```
+
+Storybook will be available at [http://localhost:6006](http://localhost:6006)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/new-feature`
+3. Commit your changes: `git commit -m 'Add new feature'`
+4. Push to the branch: `git push origin feature/new-feature`
+5. Submit a pull request
+
+## 📝 Code Style
+
+- Use TypeScript for all new components
+- Follow the atomic design pattern
+- Write tests for new components
+- Document components in Storybook
+- Use meaningful commit messages
+
+## 🐛 Known Issues
+
+- None currently reported
+
+## 📄 License
+
+This project is private and proprietary.
+
+## 👥 Authors
+
+- **Om Prakash Yadav** - [GitHub](https://github.com/om-prakash-yadav)
+
+## 🔗 Links
+
+- [Repository](https://github.com/om-prakash-yadav/tessell-task)
+- [Issues](https://github.com/om-prakash-yadav/tessell-task/issues)
+- [Create React App Documentation](https://facebook.github.io/create-react-app/docs/getting-started)
+- [React Documentation](https://reactjs.org/)
