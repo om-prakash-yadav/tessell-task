@@ -1,26 +1,37 @@
 import React from 'react';
 import FlexContainer from '../components/atoms/flex-container/flex-container';
 import { ThemeColors, ThemeSpacing } from '../theme/theme';
-
+import { MediaQuery } from '../theme/constants/media-query';
 // CSS-in-JS styled components using React.CSSProperties
 
 export const ContentWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const styles: React.CSSProperties = {
     flex: 1,
     backgroundColor: ThemeColors["surface-50"],
-    gap: `calc(${ThemeSpacing.variables.GAP})`,
+    gap: '20px', // GAP value from CSS variables (--gap: 20px)
   };
 
   return <div style={styles}>{children}</div>;
 };
 
 export const ContentArea: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [isDesktop, setIsDesktop] = React.useState(window.innerWidth >= 1024);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <FlexContainer
       flexValue={1}
-      spacing={parseInt(ThemeSpacing.variables.GAP.replace('px', ''))}
-      horizontalPadding={parseInt(ThemeSpacing.variables.PAGE_PADDING.replace('px', ''))}
-      flexDirection="column"
+      spacing={20} // GAP value (20px)
+      horizontalPadding={20} // PAGE_PADDING value (20px)
+      flexDirection={isDesktop ? "row" : "column"}
       alignChildren="flex-start"
       justifyItems="space-between"
     >
@@ -30,11 +41,22 @@ export const ContentArea: React.FC<{ children: React.ReactNode }> = ({ children 
 };
 
 export const CreateServiceSectionWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [isDesktop, setIsDesktop] = React.useState(window.innerWidth >= 1024);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const styles: React.CSSProperties = {
     backgroundColor: ThemeColors["surface-0"],
     borderRadius: '4px',
     width: '100%',
-    maxWidth: '380px',
+    maxWidth: isDesktop ? '380px' : 'none',
   };
 
   return <div style={styles}>{children}</div>;
@@ -53,10 +75,10 @@ export const ContentContainer = React.forwardRef<HTMLDivElement, ContentContaine
     position: 'relative',
     backgroundColor: ThemeColors["surface-0"],
     borderRadius: '4px',
-    paddingTop: `calc(${ThemeSpacing.variables.GUTTER})`,
-    paddingBottom: `calc(${ThemeSpacing.variables.GUTTER})`,
-    paddingLeft: `calc(${ThemeSpacing.variables.GUTTER})`,
-    paddingRight: `calc(${$paddingRightX} * ${ThemeSpacing.variables.GUTTER})`,
+    paddingTop: '16px', // GUTTER value (16px)
+    paddingBottom: '16px', // GUTTER value (16px)
+    paddingLeft: '16px', // GUTTER value (16px)
+    paddingRight: `${16 * $paddingRightX}px`, // GUTTER * $paddingRightX
   };
 
   return <div ref={ref} style={styles}>{children}</div>;
@@ -71,7 +93,7 @@ export const LoadingOverlay: React.FC<{ children: React.ReactNode }> = ({ childr
     bottom: 0,
     zIndex: 100,
     backdropFilter: 'blur(2px)',
-    WebkitBackdropFilter: 'blur(2px)',
+    WebkitBackdropFilter: 'blur(2px)', // Fixed the webkit prefix
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

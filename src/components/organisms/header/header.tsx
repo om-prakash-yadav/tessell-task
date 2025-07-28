@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Breadcrumbs from "../../molecules/breadcrumbs/breadcrumbs";
 import type { HeaderProps } from "./header-props";
 import { Text } from "../../atoms/text/text";
 import SpacingDivider from "../../atoms/spacing-divider/spacing-divider";
-import IconAction from "../../atoms/icon-action/icon-action";
+import { IconAction } from "../../atoms/icon-action/icon-action";
 import ProfileImage from "../../atoms/ProfileImage/ProfileImage";
 import FlexContainer from "../../atoms/flex-container/flex-container";
-import { GITHUB_LINK } from "../../../constants/constants";
-import { ThemeColors, ThemeSpacing } from "../../../theme/theme";
-import { BreakpointDevices } from "../../../theme/constants/breakpoints-devices";
+import { GITHUB_LINK } from "../../constants/constants";
+import { ThemeSpacing } from "../../../theme/theme";
 
 /**
  * There is a static part to the header, that doesn't change.
@@ -21,92 +20,76 @@ const Header: React.FC<HeaderProps> = ({
   userAvatarSrc,
   backgroundColor,
 }) => {
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsDesktop(window.innerWidth >= BreakpointDevices.desktop);
-    };
-
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
+  const headerWrapperStyle = {
+    minHeight: `calc(3 * ${ThemeSpacing.variables.GUTTER})`,
+  };
 
   return (
-    <FlexContainer 
+    <FlexContainer
       backgroundColor={backgroundColor ?? "opacity-transparent"}
-      horizontalPadding={20}
-      containerHeight={`calc(3 * ${ThemeSpacing.variables.GUTTER})`}
-      flexDirection="row"
+      horizontalPadding={12} // GAP equivalent
       justifyItems="space-between"
       alignChildren="center"
+      style={headerWrapperStyle}
     >
       <Breadcrumbs items={breadcrumbs} />
       
-      {isDesktop && (
-        <FlexContainer
-          flexDirection="row"
-          alignChildren="center"
-          spacing={8}
+      <FlexContainer
+        spacing={8} // GUTTER / 2 equivalent
+        alignChildren="center"
+        flexDirection="row"
+        className="header-icon-content"
+      >
+        <Text
+          $renderAs="bodyXs"
+          $marginHorizontal="8px"
         >
-          <Text
-            $renderAs="Text-body/primary/primary"
-            $marginHorizontal="8px"
-          >
-            Credits: ${credits ?? 0}
-          </Text>
-          
-          <SpacingDivider 
-            backgroundTone="surface-200" 
-            dividerHeight={20} 
-            dividerWidth={1} 
+          Credits: ${credits ?? 0}
+        </Text>
+        <SpacingDivider backgroundTone="surface-200" dividerHeight={20} dividerWidth={1} />
+        
+        <FlexContainer
+          containerHeight={32}
+          containerWidth={32}
+          alignChildren="center"
+          justifyItems="center"
+        >
+          <IconAction
+            accessibilityLabel="Announcement"
+            iconKey="Announcement"
+            buttonScale="large"
+            buttonStyle="secondary"
           />
-          
-          <FlexContainer
-            containerHeight={32}
-            containerWidth={32}
-            alignChildren="center"
-            justifyItems="center"
-          >
-            <IconAction
-              iconKey="Announcement"
-              accessibilityLabel="Announcement"
-              buttonScale="large"
-              buttonStyle="secondary"
-            />
-          </FlexContainer>
-          
-          <FlexContainer
-            containerHeight={32}
-            containerWidth={32}
-            alignChildren="center"
-            justifyItems="center"
-          >
-            <IconAction
-              iconKey="QuestionMark"
-              accessibilityLabel="FAQ"
-              buttonScale="large"
-              buttonStyle="secondary"
-            />
-          </FlexContainer>
-          
-          <FlexContainer
-            containerHeight={32}
-            containerWidth={32}
-            alignChildren="center"
-            justifyItems="center"
-          >
-            <IconAction
-              iconKey="Bell"
-              accessibilityLabel="Notifications"
-              buttonScale="large"
-              buttonStyle="secondary"
-            />
-          </FlexContainer>
         </FlexContainer>
-      )}
+        
+        <FlexContainer
+          containerHeight={32}
+          containerWidth={32}
+          alignChildren="center"
+          justifyItems="center"
+        >
+          <IconAction
+            accessibilityLabel="FAQ"
+            iconKey="QuestionMark"
+            buttonScale="large"
+            buttonStyle="secondary"
+          />
+        </FlexContainer>
+        
+        <FlexContainer
+          containerHeight={32}
+          containerWidth={32}
+          alignChildren="center"
+          justifyItems="center"
+        >
+          <IconAction
+            accessibilityLabel="Notifications"
+            iconKey="Bell"
+            buttonScale="large"
+            buttonStyle="secondary"
+          />
+        </FlexContainer>
+      </FlexContainer>
       
       <SpacingDivider dividerWidth={1} />
       

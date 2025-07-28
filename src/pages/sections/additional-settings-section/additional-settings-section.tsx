@@ -9,7 +9,7 @@ import { Radio } from "../../../components/molecules/radio/radio";
 import { Dropdown } from "../../../components/organisms/dropdown/dropdown";
 import Notification from "../../../components/organisms/notification/notification";
 import { useProvisioningPageContext } from "../../hooks/use-provisioning-context";
-import { ContentContainer, LoadingOverlay } from "../../provisioning.styled";
+import { ContentContainer, LoadingOverlay } from "../../common-style";
 import TableItem from "./table-item";
 
 const AdditionalSettingsSection = () => {
