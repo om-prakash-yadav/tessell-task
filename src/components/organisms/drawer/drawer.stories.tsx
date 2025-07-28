@@ -3,7 +3,9 @@ import Drawer from './drawer';
 import { DrawerProvider } from './hooks/drawer-provider';
 import { Text } from '../../atoms/text/text';
 import FlexContainer from '../../atoms/flex-container/flex-container';
-import type { DrawerBtnProps, DrawerProps } from './drawer-types';
+import type { DrawerBtnProps, DrawerProps, DrawerDropdownProps } from './drawer-types';
+import { useState } from 'react';
+import type { DropdownItemProps } from '../dropdown/dropdown-types';
 
 const meta: Meta<typeof Drawer> = {
   title: 'ORGANISMS/Drawer',
@@ -12,6 +14,10 @@ const meta: Meta<typeof Drawer> = {
     layout: 'fullscreen',
   },
   argTypes: {
+    dropdown: {
+      description: 'Optional dropdown configuration',
+      control: 'object',
+    },
     menuOptions: {
       description: 'Array of menu button options',
       control: 'object',
@@ -88,7 +94,82 @@ const sampleFooterOptions: DrawerBtnProps[] = [
   },
 ];
 
+// Sample dropdown options
+const sampleDropdownOptions: DropdownItemProps[] = [
+  {
+    label: 'DB Services',
+    value: 'db-services',
+  },
+  {
+    label: 'Analytics Services',
+    value: 'analytics-services',
+  },
+  {
+    label: 'Storage Services',
+    value: 'storage-services',
+  },
+  {
+    label: 'Compute Services',
+    value: 'compute-services',
+  },
+  {
+    label: 'Network Services',
+    value: 'network-services',
+  },
+];
+
 export const Default: Story = {
+  args: {
+    menuOptions: sampleMenuOptions,
+    footerOptions: sampleFooterOptions,
+  },
+  render: (args: DrawerProps) => {
+    const [selectedValue, setSelectedValue] = useState<string | number>('db-services');
+    
+    const dropdownConfig: DrawerDropdownProps = {
+      options: sampleDropdownOptions,
+      selected: selectedValue,
+      handleChange: (value) => {
+        setSelectedValue(value);
+        console.log('Dropdown selection changed:', value);
+      },
+    };
+
+    return (
+      <DrawerProvider initialOpen={true}>
+        <div style={{ position: 'relative', height: '100vh', overflow: 'hidden' }}>
+          <Drawer {...args} dropdown={dropdownConfig} />
+          <FlexContainer
+            horizontalPadding={240} // Account for drawer width + padding
+            verticalPadding={20}
+            flexDirection="column"
+            spacing={16}
+            containerHeight="100vh"
+            backgroundColor="surface-0"
+          >
+            <Text $renderAs="heading/Titles" $color="primary">
+              Main Content Area
+            </Text>
+            <Text $renderAs="bodyPrimary" $color="subtler">
+              This is the main content area. The drawer is positioned as a fixed overlay
+              that slides in from the left. You can interact with the drawer items and
+              toggle the drawer using the buttons in the header. The dropdown shows "DB Services" by default.
+            </Text>
+            <Text $renderAs="bodySecondary" $color="subtlest">
+              Current selection: {selectedValue}. Lorem ipsum dolor sit amet consectetur, 
+              adipisicing elit. Ab in corrupti magnam, ipsa illum sed illo architecto eveniet 
+              explicabo dolorum, corporis similique officiis laudantium, tempore velit impedit
+              aut consequatur tenetur. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </Text>
+          </FlexContainer>
+        </div>
+      </DrawerProvider>
+    );
+  },
+};
+
+export const WithoutDropdown: Story = {
   args: {
     menuOptions: sampleMenuOptions,
     footerOptions: sampleFooterOptions,
@@ -106,19 +187,11 @@ export const Default: Story = {
           backgroundColor="surface-0"
         >
           <Text $renderAs="heading/Titles" $color="primary">
-            Main Content Area
+            Drawer Without Dropdown
           </Text>
           <Text $renderAs="bodyPrimary" $color="subtler">
-            This is the main content area. The drawer is positioned as a fixed overlay
-            that slides in from the left. You can interact with the drawer items and
-            toggle the drawer using the buttons in the header.
-          </Text>
-          <Text $renderAs="bodySecondary" $color="subtlest">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab in
-            corrupti magnam, ipsa illum sed illo architecto eveniet explicabo
-            dolorum, corporis similique officiis laudantium, tempore velit impedit
-            aut consequatur tenetur. Sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
+            This version of the drawer doesn't include the dropdown component.
+            It shows how the drawer behaves when no dropdown prop is provided.
           </Text>
         </FlexContainer>
       </div>

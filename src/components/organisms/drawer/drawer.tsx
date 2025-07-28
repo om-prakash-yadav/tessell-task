@@ -3,6 +3,7 @@ import FlexContainer from "../../atoms/flex-container/flex-container";
 import SpacingDivider from "../../atoms/spacing-divider/spacing-divider";
 import { Text } from "../../atoms/text/text";
 import DrawerHeader from "./comps/drawer-header";
+import { Dropdown } from "../dropdown/dropdown";
 import type { DrawerProps } from "./drawer-types";
 import type { ButtonProps } from "../../atoms/button/button-types";
 import { useMemo } from "react";
@@ -12,6 +13,7 @@ import { ThemeColors, ThemeSpacing } from "../../../theme/theme";
 import { DRAWER_WIDTH } from "./drawer-constants";
 
 const Drawer: React.FC<DrawerProps> = ({
+  dropdown,
   menuOptions,
   footerOptions,
 }) => {
@@ -105,6 +107,18 @@ const Drawer: React.FC<DrawerProps> = ({
           </Text>
         </Button>
         <SpacingDivider dividerHeight={`calc(${ThemeSpacing.variables.GUTTER} / 2)`} />
+        {dropdown && (
+          <>
+            <Dropdown
+              $size="small"
+              $options={dropdown.options}
+              $placeholder="Select an option"
+              $value={dropdown.selected}
+              onChange={dropdown.handleChange}
+            />
+            <SpacingDivider dividerHeight={`calc(${ThemeSpacing.variables.GUTTER} / 2)`} />
+          </>
+        )}
         {menuBtns.map((btnOptions, index) => (
           <Button key={index} {...btnOptions} />
         ))}

@@ -3,7 +3,7 @@ import Breadcrumbs from "./breadcrumbs";
 
 
 const meta: Meta<typeof Breadcrumbs> = {
-  title: "Components/Breadcrumbs",
+  title: "MOLECULES/Breadcrumbs",
   component: Breadcrumbs,
 };
 
