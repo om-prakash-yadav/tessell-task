@@ -110,7 +110,7 @@ const Drawer: React.FC<DrawerProps> = ({
         {dropdown && (
           <>
             <Dropdown
-              $size="small"
+              $size="default"
               $options={dropdown.options}
               $placeholder="Select an option"
               $value={dropdown.selected}

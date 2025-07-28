@@ -48,13 +48,13 @@ const AdditionalSettingsSection = () => {
         </LoadingOverlay>
       )}
       <Text $renderAs="heading/primary">Additional settings</Text>
-      <SpacingDivider verticalSizeMultiplier={2} />
+      <SpacingDivider dividerHeight={2} />
       <Text $renderAs="Text-body/primary/primary" $color="subtler">
         Maintenance Window, Availability machine
       </Text>
       <SpacingDivider verticalSizeMultiplier={2} />
       <Text $renderAs="heading/secondary">Maintenance Window</Text>
-      <SpacingDivider verticalSizeMultiplier={2} />
+      <SpacingDivider dividerHeight={2} />
       <Text $renderAs="Text-body/secondary/secondary" $color="subtlest">
         Describing what maintenance window is
       </Text>

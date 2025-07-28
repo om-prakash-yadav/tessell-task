@@ -82,13 +82,12 @@ const TextinputTag = forwardRef<TextInputTagRef, TextInputTagProps>(
     }));
 
     return (
-      <FlexContainer flexDirection="column" spacing={4} bottomMarginMultiplier={marginBottomX}>
+      <FlexContainer containerWidth={"300px"} flexDirection="column" spacing={4} bottomMarginMultiplier={marginBottomX}>
         <InputField
           ref={txtInputRef}
           $label={label}
           name={name}
           placeholder={placeholder}
-          $maxWidth={maxWidth}
           $size="default"
           value={inputValue}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {

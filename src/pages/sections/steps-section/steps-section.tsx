@@ -11,7 +11,6 @@ const StepsSection: React.FC<StepsSectionProps> = ({
   currentStepIndex,
   steps,
 }) => {
-  const { button } = steps[currentStepIndex] || {};
 
   // Container styles using CSS-in-JS approach
   const containerStyles = {
@@ -49,20 +48,18 @@ const StepsSection: React.FC<StepsSectionProps> = ({
             $99.99
           </Text>
         </FlexContainer>
-        {button && (
           <Button
-            $icon={button.icon}
+            $icon={"Add"}
             $size="large"
             $type="primary"
             $isFullWidth
-            onClick={button.onClick}
-            $isLoading={button.isLoading}
+            onClick={() => {}}
+            $isLoading={false}
           >
             <Text $renderAs="button/large" $color="surface-0">
-              {button.label}
+              Create Service
             </Text>
           </Button>
-        )}
       </FlexContainer>
       <SpacingDivider dividerHeight="0.5px" backgroundTone="surface-100" />
     </FlexContainer>
