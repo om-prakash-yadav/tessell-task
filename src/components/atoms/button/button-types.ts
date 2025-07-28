@@ -3,7 +3,7 @@ import type { AppIconKeys } from "../../../assets/icons";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  $icon: AppIconKeys;
+  $icon?: AppIconKeys;
   $trailingIcon?: AppIconKeys;
   $type: "primary" | "tertiary";
   $size: "small" | "regular" | "large";

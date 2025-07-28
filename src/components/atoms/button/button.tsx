@@ -20,7 +20,7 @@ export const Button: React.FC<ButtonProps> = ({
   $isHorizontallyCentered = true,
   ...rest
 }) => {
-  const PrimaryIcon = AppIcons[$icon as keyof typeof AppIcons];
+  const PrimaryIcon = $icon ? AppIcons[$icon as keyof typeof AppIcons] : null;
   const SecondaryIcon = $trailingIcon ? AppIcons[$trailingIcon as keyof typeof AppIcons] : null;
 
   // Configuration mapping for different button configurations
@@ -114,11 +114,13 @@ export const Button: React.FC<ButtonProps> = ({
         <div className="loading-animation" />
       ) : (
         <>
-          <PrimaryIcon 
-            height={configuration.size.iconSize} 
-            width={configuration.size.iconSize} 
-          />
-          {!$iconOnly && <SpacingDivider dividerWidth={configuration.size.iconMarginRight} />}
+          {PrimaryIcon && (
+            <PrimaryIcon 
+              height={configuration.size.iconSize} 
+              width={configuration.size.iconSize} 
+            />
+          )}
+          {!$iconOnly && PrimaryIcon && <SpacingDivider dividerWidth={configuration.size.iconMarginRight} />}
           {children}
         </>
       )}
