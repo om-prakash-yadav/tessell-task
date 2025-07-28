@@ -15,4 +15,6 @@ export interface ExtendedStepperItem extends StepperItem {
 export interface StepsSectionProps {
   currentStepIndex: number;
   steps: ExtendedStepperItem[];
+  isLoading?: boolean;
+  onCreateService?: () => Promise<void>;
 }

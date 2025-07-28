@@ -7,7 +7,6 @@ import FlexContainer from "../../../components/atoms/flex-container/flex-contain
 import { Dropdown } from "../../../components/organisms/dropdown/dropdown";
 import { Checkbox } from "../../../components/atoms/checkbox/checkbox";
 import TextinputTag from "../../../components/molecules/textinput-tag/textinput-tag";
-import Spinner from "../../../components/atoms/spinner/spinner";
 import { useProvisioningPageContext } from "../../hooks/use-provisioning-context";
 import { ThemeColors, ThemeSpacing } from "../../../theme/theme";
 
@@ -15,7 +14,6 @@ const ServiceDetailsSection = () => {
   const { serviceSection } = useProvisioningPageContext();
   const {
     containerRef,
-    showLoading,
     helpTextTags,
     textInputTagRef,
     serviceName,
@@ -45,28 +43,8 @@ const ServiceDetailsSection = () => {
     paddingRight: `calc(1.75 * ${ThemeSpacing.variables.GUTTER})`,
   };
 
-  // Loading Overlay styles
-  const loadingOverlayStyles: React.CSSProperties = {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    zIndex: 100,
-    backdropFilter: 'blur(2px)',
-    WebkitBackdropFilter: 'blur(2px)',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  };
-
   return (
     <div ref={containerRef} style={contentContainerStyles}>
-      {showLoading && (
-        <div style={loadingOverlayStyles}>
-          <Spinner />
-        </div>
-      )}
       <Text $renderAs="heading/primary">Service Details</Text>
       <SpacingDivider dividerHeight={2} />
       <Text $renderAs="Text-body/primary/primary" $color="subtler">

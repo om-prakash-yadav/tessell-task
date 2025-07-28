@@ -3,7 +3,6 @@ import { Checkbox } from "../../../components/atoms/checkbox/checkbox";
 import FlexContainer from "../../../components/atoms/flex-container/flex-container";
 import InputField from "../../../components/atoms/input-field/input-field";
 import SpacingDivider from "../../../components/atoms/spacing-divider/spacing-divider";
-import Spinner from "../../../components/atoms/spinner/spinner";
 import { Text } from "../../../components/atoms/text/text";
 import { Radio } from "../../../components/molecules/radio/radio";
 import { Dropdown } from "../../../components/organisms/dropdown/dropdown";
@@ -17,7 +16,6 @@ const AdditionalSettingsSection = () => {
   const {
     containerRef,
     startDayOptions,
-    showLoading,
     windowPreference,
     startDay,
     startTime,
@@ -42,11 +40,6 @@ const AdditionalSettingsSection = () => {
 
   return (
     <ContentContainer ref={containerRef} $paddingRightX={1}>
-      {showLoading && (
-        <LoadingOverlay>
-          <Spinner />
-        </LoadingOverlay>
-      )}
       <Text $renderAs="heading/primary">Additional settings</Text>
       <SpacingDivider dividerHeight={2} />
       <Text $renderAs="Text-body/primary/primary" $color="subtler">

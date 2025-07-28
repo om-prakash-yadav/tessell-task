@@ -5,7 +5,6 @@ import SpacingDivider from "../components/atoms/spacing-divider/spacing-divider"
 import type { StepperItem } from "../components/molecules/stepper/stepper.types";
 import { Text } from "../components/atoms/text/text";
 import { useProvisioningPageContext } from "./hooks/use-provisioning-context";
-import { ThemeColors } from "../theme/theme";
 
 export const useProvisioning = () => {
   const { serviceSection, additionalSection } = useProvisioningPageContext();
@@ -104,5 +103,8 @@ export const useProvisioning = () => {
   return {
     steps,
     currentStepIndex,
+    isLoading,
+    handleServiceSubmit,
+    handleAdditionalSettingsSubmit,
   };
 };

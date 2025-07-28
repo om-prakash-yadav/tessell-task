@@ -9,10 +9,6 @@ import { ThemeSpacing } from "../../../../theme/theme";
 const DrawerHeader = () => {
   const { toggleDrawer } = useDrawerContext();
 
-  const headerStyles = {
-    height: `calc(${ThemeSpacing.variables.GUTTER} * 2)`,
-  };
-
   return (
     <FlexContainer 
       containerHeight={`calc(${ThemeSpacing.variables.GUTTER} * 2)`}

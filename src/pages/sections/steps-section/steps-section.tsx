@@ -10,6 +10,8 @@ import type { StepsSectionProps } from "./steps-section-types";
 const StepsSection: React.FC<StepsSectionProps> = ({
   currentStepIndex,
   steps,
+  isLoading = false,
+  onCreateService,
 }) => {
 
   // Container styles using CSS-in-JS approach
@@ -53,11 +55,11 @@ const StepsSection: React.FC<StepsSectionProps> = ({
             $size="large"
             $type="primary"
             $isFullWidth
-            onClick={() => {}}
-            $isLoading={false}
+            onClick={onCreateService || (() => {})}
+            $isLoading={isLoading}
           >
             <Text $renderAs="button/large" $color="surface-0">
-              Create Service
+              {currentStepIndex === 0 ? "Continue" : "Create Service"}
             </Text>
           </Button>
       </FlexContainer>

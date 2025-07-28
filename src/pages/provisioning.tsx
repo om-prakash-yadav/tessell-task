@@ -13,7 +13,7 @@ import { memo } from "react";
 
 const ProvisioningComp: React.FC = () => {
 
-  const { steps, currentStepIndex } = useProvisioning();
+  const { steps, currentStepIndex, isLoading, handleServiceSubmit, handleAdditionalSettingsSubmit } = useProvisioning();
 
   return (
     <S.ContentWrapper>
@@ -49,7 +49,12 @@ const ProvisioningComp: React.FC = () => {
       <SpacingDivider verticalSizeMultiplier={1.5} />
       <S.ContentArea>
         <S.CreateServiceSectionWrapper>
-          <StepsSection steps={steps} currentStepIndex={currentStepIndex} />
+          <StepsSection 
+            steps={steps} 
+            currentStepIndex={currentStepIndex}
+            isLoading={isLoading}
+            onCreateService={currentStepIndex === 0 ? handleServiceSubmit : handleAdditionalSettingsSubmit}
+          />
         </S.CreateServiceSectionWrapper>
         <FlexContainer flexValue={1} spacing={20} flexDirection="column">
           <ServiceDetailsSection />
