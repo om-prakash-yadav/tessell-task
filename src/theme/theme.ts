@@ -143,6 +143,73 @@ export const ThemeCheckbox = {
 
 export const ThemeRadio = {
   className: 'radio',
+  variants: {
+    primary: {
+      selected: {
+        default: { borderColor: 'primary-200', dotColor: 'primary-200', backgroundColor: 'opacity-transparent' },
+        hover: { borderColor: 'primary-300', dotColor: 'primary-200', backgroundColor: 'opacity-transparent' },
+        disabled: { borderColor: 'surface-300', dotColor: 'disabled', backgroundColor: 'opacity-transparent' }
+      },
+      unselected: {
+        default: { borderColor: 'surface-300', backgroundColor: 'opacity-transparent' },
+        hover: { borderColor: 'surface-400', backgroundColor: 'opacity-transparent' },
+        disabled: { borderColor: 'surface-300', backgroundColor: 'opacity-transparent' }
+      }
+    },
+    secondary: {
+      selected: {
+        default: { borderColor: 'secondary-200', dotColor: 'secondary-200', backgroundColor: 'opacity-transparent' },
+        hover: { borderColor: 'secondary-300', dotColor: 'secondary-200', backgroundColor: 'opacity-transparent' },
+        disabled: { borderColor: 'surface-300', dotColor: 'disabled', backgroundColor: 'opacity-transparent' }
+      },
+      unselected: {
+        default: { borderColor: 'surface-300', backgroundColor: 'opacity-transparent' },
+        hover: { borderColor: 'surface-400', backgroundColor: 'opacity-transparent' },
+        disabled: { borderColor: 'surface-300', backgroundColor: 'opacity-transparent' }
+      }
+    },
+    danger: {
+      selected: {
+        default: { borderColor: 'danger-200', dotColor: 'danger-200', backgroundColor: 'opacity-transparent' },
+        hover: { borderColor: 'danger-300', dotColor: 'danger-200', backgroundColor: 'opacity-transparent' },
+        disabled: { borderColor: 'surface-300', dotColor: 'disabled', backgroundColor: 'opacity-transparent' }
+      },
+      unselected: {
+        default: { borderColor: 'surface-300', backgroundColor: 'opacity-transparent' },
+        hover: { borderColor: 'surface-400', backgroundColor: 'opacity-transparent' },
+        disabled: { borderColor: 'surface-300', backgroundColor: 'opacity-transparent' }
+      }
+    },
+    success: {
+      selected: {
+        default: { borderColor: 'success-200', dotColor: 'success-200', backgroundColor: 'opacity-transparent' },
+        hover: { borderColor: 'success-300', dotColor: 'success-200', backgroundColor: 'opacity-transparent' },
+        disabled: { borderColor: 'surface-300', dotColor: 'disabled', backgroundColor: 'opacity-transparent' }
+      },
+      unselected: {
+        default: { borderColor: 'surface-300', backgroundColor: 'opacity-transparent' },
+        hover: { borderColor: 'surface-400', backgroundColor: 'opacity-transparent' },
+        disabled: { borderColor: 'surface-300', backgroundColor: 'opacity-transparent' }
+      }
+    },
+    warning: {
+      selected: {
+        default: { borderColor: 'warning-200', dotColor: 'warning-200', backgroundColor: 'opacity-transparent' },
+        hover: { borderColor: 'warning-300', dotColor: 'warning-200', backgroundColor: 'opacity-transparent' },
+        disabled: { borderColor: 'surface-300', dotColor: 'disabled', backgroundColor: 'opacity-transparent' }
+      },
+      unselected: {
+        default: { borderColor: 'surface-300', backgroundColor: 'opacity-transparent' },
+        hover: { borderColor: 'surface-400', backgroundColor: 'opacity-transparent' },
+        disabled: { borderColor: 'surface-300', backgroundColor: 'opacity-transparent' }
+      }
+    }
+  },
+  sizes: {
+    small: { size: 14, dotSize: 6 },
+    regular: { size: 16, dotSize: 8 },
+    large: { size: 20, dotSize: 10 }
+  }
 };
 
 export const ThemeIconButton = {
