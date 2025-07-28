@@ -4,7 +4,7 @@ import { AppIcons } from "../../../assets/icons";
 import { Text } from "../../atoms/text/text";
 import FlexContainer from "../../atoms/flex-container/flex-container";
 import type { TableHeaderProps } from "./table-types";
-import { ThemeColors } from "../../../theme/theme";
+import { ThemeColors, ThemeSpacing } from "../../../theme/theme";
 
 export const TableHeader: React.FC<TableHeaderProps> = ({
   isAllSelected,
@@ -18,12 +18,12 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
   };
 
   const headerCellStyles = {
-    padding: "16px 12px",
+    padding: `${ThemeSpacing.variables.GUTTER} calc(${ThemeSpacing.variables.GUTTER} * 0.75)`,
     textAlign: "left" as const,
   };
 
   const sortIconStyles = {
-    marginLeft: "8px",
+    marginLeft: `calc(${ThemeSpacing.variables.GUTTER} * 0.5)`,
     color: ThemeColors["subtlest"],
     cursor: "pointer",
   };

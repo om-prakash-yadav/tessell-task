@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import type { DropdownItemProps } from "./dropdown-types";
 import FlexContainer from "../../atoms/flex-container/flex-container";
 import { Text } from "../../atoms/text/text";
-import { ThemeColors } from "../../../theme/theme";
+import { ThemeColors, ThemeSpacing } from "../../../theme/theme";
 
 export const DropdownItem: React.FC<DropdownItemProps> = ({
   label,
@@ -52,7 +52,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = ({
         <FlexContainer alignChildren="center" justifyItems="flex-start" flexValue="1">
           {$leadingItem && (
             <div style={{
-              marginRight: "8px",
+              marginRight: `calc(${ThemeSpacing.variables.GUTTER} * 0.5)`,
               display: "flex",
               alignItems: "center",
               color: "inherit",
@@ -75,7 +75,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = ({
         </FlexContainer>
         {$trailingItem && (
           <div style={{
-            marginLeft: "8px",
+            marginLeft: `calc(${ThemeSpacing.variables.GUTTER} * 0.5)`,
             display: "flex",
             alignItems: "center",
             color: "inherit",

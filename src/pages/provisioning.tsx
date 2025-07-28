@@ -15,7 +15,6 @@ import { ThemeSpacing } from "../theme/theme";
 
 const ProvisioningComp: React.FC = () => {
   const { toggleDrawer } = useDrawerContext();
-  const GAP = parseInt(ThemeSpacing.variables.GAP.replace('px', ''));
 
   const { steps, currentStepIndex } = useProvisioning();
 
@@ -55,7 +54,7 @@ const ProvisioningComp: React.FC = () => {
         <S.CreateServiceSectionWrapper>
           <StepsSection steps={steps} currentStepIndex={currentStepIndex} />
         </S.CreateServiceSectionWrapper>
-        <FlexContainer flexValue={1} spacing={GAP} flexDirection="column">
+        <FlexContainer flexValue={1} spacing={20} flexDirection="column">
           <ServiceDetailsSection />
           <AdditionalSettingsSection />
         </FlexContainer>

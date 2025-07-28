@@ -20,17 +20,13 @@ const Header: React.FC<HeaderProps> = ({
   userAvatarSrc,
   backgroundColor,
 }) => {
-  const headerWrapperStyle = {
-    minHeight: `calc(3 * ${ThemeSpacing.variables.GUTTER})`,
-  };
-
   return (
     <FlexContainer
       backgroundColor={backgroundColor ?? "opacity-transparent"}
-      horizontalPadding={12} // GAP equivalent
+      horizontalPadding={20} // GAP equivalent
       justifyItems="space-between"
       alignChildren="center"
-      style={headerWrapperStyle}
+      containerHeight={`calc(3 * ${ThemeSpacing.variables.GUTTER})`}
     >
       <Breadcrumbs items={breadcrumbs} />
       

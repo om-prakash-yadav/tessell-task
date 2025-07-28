@@ -8,7 +8,7 @@ export const ContentWrapper: React.FC<{ children: React.ReactNode }> = ({ childr
   const styles: React.CSSProperties = {
     flex: 1,
     backgroundColor: ThemeColors["surface-50"],
-    gap: '20px', // GAP value from CSS variables (--gap: 20px)
+    gap: ThemeSpacing.variables.GAP,
   };
 
   return <div style={styles}>{children}</div>;
@@ -75,10 +75,10 @@ export const ContentContainer = React.forwardRef<HTMLDivElement, ContentContaine
     position: 'relative',
     backgroundColor: ThemeColors["surface-0"],
     borderRadius: '4px',
-    paddingTop: '16px', // GUTTER value (16px)
-    paddingBottom: '16px', // GUTTER value (16px)
-    paddingLeft: '16px', // GUTTER value (16px)
-    paddingRight: `${16 * $paddingRightX}px`, // GUTTER * $paddingRightX
+    paddingTop: ThemeSpacing.variables.GUTTER,
+    paddingBottom: ThemeSpacing.variables.GUTTER,
+    paddingLeft: ThemeSpacing.variables.GUTTER,
+    paddingRight: `calc(${ThemeSpacing.variables.GUTTER} * ${$paddingRightX})`,
   };
 
   return <div ref={ref} style={styles}>{children}</div>;

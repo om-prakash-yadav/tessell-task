@@ -2,7 +2,7 @@ import React from "react";
 import type { TableRowProps } from "./table-types";
 import { Checkbox } from "../../atoms/checkbox/checkbox";
 import FlexContainer from "../../atoms/flex-container/flex-container";
-import { ThemeColors } from "../../../theme/theme";
+import { ThemeColors, ThemeSpacing } from "../../../theme/theme";
 
 export const TableRow: React.FC<TableRowProps> = ({
   isSelected,
@@ -15,7 +15,7 @@ export const TableRow: React.FC<TableRowProps> = ({
   };
 
   const cellStyles = {
-    padding: "12px",
+    padding: `calc(${ThemeSpacing.variables.GUTTER} * 0.75)`,
   };
 
   return (

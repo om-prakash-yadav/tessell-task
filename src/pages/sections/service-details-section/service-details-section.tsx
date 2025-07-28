@@ -68,7 +68,7 @@ const ServiceDetailsSection = () => {
         </div>
       )}
       <Text $renderAs="heading/primary">Service Details</Text>
-      <SpacingDivider verticalSizeMultiplier={2} />
+      <SpacingDivider dividerHeight={2} />
       <Text $renderAs="Text-body/primary/primary" $color="subtler">
         Service Name, Service Description, Software Release
       </Text>

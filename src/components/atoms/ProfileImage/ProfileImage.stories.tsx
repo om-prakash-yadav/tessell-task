@@ -74,7 +74,7 @@ export const SizeShowcase: Story = {
     size: "regular",
   },
   render: (args) => (
-    <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+    <div style={{ display: "flex", gap: "var(--gutter)", alignItems: "center" }}>
       <ProfileImage {...args} size="small" alt="Compact Profile" />
       <ProfileImage {...args} size="regular" alt="Standard Profile" />
       <ProfileImage {...args} size="large" alt="Large Profile" />

@@ -11,17 +11,6 @@ const HeaderTitle: React.FC<HeaderTitleProps> = ({
   trailingItem,
   backgroundColor,
 }) => {
-  const gutterValue =
-    typeof ThemeSpacing.variables.GUTTER === "number"
-      ? ThemeSpacing.variables.GUTTER
-      : parseFloat(ThemeSpacing.variables.GUTTER);
-
-  const containerStyle = {
-    height: 3 * gutterValue,
-  };
-
-
-
   return (
     <FlexContainer
       alignChildren="center"
@@ -29,7 +18,7 @@ const HeaderTitle: React.FC<HeaderTitleProps> = ({
       horizontalPadding={20} // GAP equivalent
       backgroundColor={backgroundColor ?? "opacity-transparent"}
       topBorderWidth={1}
-      style={containerStyle}
+      containerHeight={`calc(3 * ${ThemeSpacing.variables.GUTTER})`}
     >
       <FlexContainer flexValue={1}>
         <Text $renderAs="heading/primary">{title}</Text>

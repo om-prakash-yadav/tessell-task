@@ -10,6 +10,7 @@ import { Dropdown } from "../../../components/organisms/dropdown/dropdown";
 import Notification from "../../../components/organisms/notification/notification";
 import { useProvisioningPageContext } from "../../hooks/use-provisioning-context";
 import { ContentContainer, LoadingOverlay } from "../../common-style";
+import { ThemeSpacing, ThemeColors } from "../../../theme/theme";
 import TableItem from "./table-item";
 
 const AdditionalSettingsSection = () => {
@@ -43,9 +44,9 @@ const AdditionalSettingsSection = () => {
   return (
     <div ref={containerRef} style={{ 
       position: 'relative', 
-      backgroundColor: '#ffffff', 
+      backgroundColor: ThemeColors["surface-0"], 
       borderRadius: '4px', 
-      padding: '16px 16px 16px 16px' 
+      padding: ThemeSpacing.variables.GUTTER 
     }}>
       {showLoading && (
         <LoadingOverlay>

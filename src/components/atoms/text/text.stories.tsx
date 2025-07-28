@@ -2,6 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { Text } from "./text";
 import type { TextProps } from "./text-types";
+import { ThemeSpacing } from "../../../theme/theme";
 
 const meta = {
   title: "Atoms/Text",
@@ -65,7 +66,7 @@ export const Variants: Story = {
         "heading/primary", "heading/secondary", "heading/form titles",
         "heading/Titles", "Heading/3", "button/large",
       ].map((variant) => (
-        <div key={variant} style={{ marginBottom: "16px" }}>
+        <div key={variant} style={{ marginBottom: ThemeSpacing.variables.GUTTER }}>
           <Text $renderAs={variant as TextProps["$renderAs"]} >
             {`This is a ${variant} text`}
           </Text>

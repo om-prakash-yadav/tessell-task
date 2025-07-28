@@ -103,10 +103,10 @@ const AppContent: React.FC = () => {
 
   // Main content styles that adjust based on drawer state
   const mainContentStyles = {
-    marginLeft: isDrawerOpen ? `${DRAWER_WIDTH}px` : '0px',
+    marginLeft: isDrawerOpen ? `251px` : '0px',
     transition: 'margin-left 0.3s ease-in-out',
     minHeight: '100vh',
-    width: isDrawerOpen ? `calc(100% - ${DRAWER_WIDTH}px)` : '100%',
+    width: isDrawerOpen ? `calc(100% - 251px)` : '100%',
   };
 
   return (
