@@ -1,5 +1,5 @@
 import React from "react";
-import { AppIcons, type AppIconKeys } from "../../../assets/icons";
+import { AppIcons, type AppIconKeys } from "../../../resources/icons";
 import { ThemeColors } from "../../../theme/theme";
 
 type TableButtonProps = {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Checkbox } from "../../atoms/checkbox/checkbox";
-import { AppIcons } from "../../../assets/icons";
+import { AppIcons } from "../../../resources/icons";
 import { Text } from "../../atoms/text/text";
 import FlexContainer from "../../atoms/flex-container/flex-container";
 import type { TableHeaderProps } from "./table-types";

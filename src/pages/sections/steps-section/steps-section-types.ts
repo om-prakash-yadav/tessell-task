@@ -1,5 +1,5 @@
 import type { StepperItem } from "../../../components/molecules/stepper/stepper.types";
-import type { AppIconKeys } from "../../../assets/icons";
+import type { AppIconKeys } from "../../../resources/icons";
 
 export interface StepButton {
   icon?: AppIconKeys;

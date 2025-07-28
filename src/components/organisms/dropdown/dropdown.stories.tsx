@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { useCallback, useState } from "react";
-import { AppIcons } from "../../../assets/icons";
+import { AppIcons } from "../../../resources/icons";
 import { Dropdown } from "./dropdown";
 import type { DropdownItemProps } from "./dropdown-types";
 import FlexContainer from "../../atoms/flex-container/flex-container";

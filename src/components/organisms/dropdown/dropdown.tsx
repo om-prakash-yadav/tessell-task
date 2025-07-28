@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { AppIcons } from "../../../assets/icons";
+import { AppIcons } from "../../../resources/icons";
 import InputField from "../../atoms/input-field/input-field";
 import { DropdownItem } from "./dropdown-item";
 import type { DropdownProps } from "./dropdown-types";

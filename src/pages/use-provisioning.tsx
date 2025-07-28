@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
-import { AppIcons } from "../assets/icons";
+import { AppIcons } from "../resources/icons";
 import FlexContainer from "../components/atoms/flex-container/flex-container";
 import SpacingDivider from "../components/atoms/spacing-divider/spacing-divider";
 import type { StepperItem } from "../components/molecules/stepper/stepper.types";

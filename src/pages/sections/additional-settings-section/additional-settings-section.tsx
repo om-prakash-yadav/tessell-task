@@ -1,4 +1,4 @@
-import { AppIcons } from "../../../assets/icons";
+import { AppIcons } from "../../../resources/icons";
 import { Checkbox } from "../../../components/atoms/checkbox/checkbox";
 import FlexContainer from "../../../components/atoms/flex-container/flex-container";
 import InputField from "../../../components/atoms/input-field/input-field";

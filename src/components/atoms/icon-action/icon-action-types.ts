@@ -1,4 +1,4 @@
-import type { AppIconKeys } from "../../../assets/icons";
+import type { AppIconKeys } from "../../../resources/icons";
 import type { ColorKeys } from "../../../theme/types/theme-colors/theme-colors";
 import type { ThemeIconActionType } from "../../../theme/types/theme-icon-action/theme-icon-action-types";
 

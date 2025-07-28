@@ -1,5 +1,5 @@
 import React from "react";
-import { AppIcons } from "../../../assets/icons";
+import { AppIcons } from "../../../resources/icons";
 import SpacingDivider from "../spacing-divider/spacing-divider";
 import { Text } from "../text/text";
 import FlexContainer from "../flex-container/flex-container";

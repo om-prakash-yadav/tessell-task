@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import InputField from './input-field';
-import { AppIcons } from '../../../assets/icons';
+import { AppIcons } from '../../../resources/icons';
 
 const meta: Meta<typeof InputField> = {
   title: 'Atoms/InputField',

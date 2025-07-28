@@ -1,5 +1,5 @@
 import type React from "react";
-import type { AppIconKeys } from "../../../assets/icons";
+import type { AppIconKeys } from "../../../resources/icons";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

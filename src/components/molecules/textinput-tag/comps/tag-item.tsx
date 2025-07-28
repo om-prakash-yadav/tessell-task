@@ -1,6 +1,6 @@
 import React from "react";
 import FlexContainer from "../../../atoms/flex-container/flex-container";
-import { AppIcons } from "../../../../assets/icons";
+import { AppIcons } from "../../../../resources/icons";
 import { Text } from "../../../atoms/text/text";
 import IconAction from "../../../atoms/icon-action/icon-action";
 

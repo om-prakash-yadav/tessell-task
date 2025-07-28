@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { AppIcons } from "../../../../assets/icons";
+import { AppIcons } from "../../../../resources/icons";
 import { useDrawerContext } from "../hooks/use-drawer-context";
 import FlexContainer from "../../../atoms/flex-container/flex-container";
 import IconAction from "../../../atoms/icon-action/icon-action";

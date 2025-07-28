@@ -1,5 +1,5 @@
 import React from "react";
-import { AppIcons } from "../../../assets/icons";
+import { AppIcons } from "../../../resources/icons";
 import type { IconActionProps } from "./icon-action-types";
 import { ThemeColors, AppDefaultTheme } from "../../../theme/theme";
 

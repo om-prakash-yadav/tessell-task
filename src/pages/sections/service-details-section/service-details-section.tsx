@@ -1,5 +1,5 @@
 import React from "react";
-import { AppIcons } from "../../../assets/icons";
+import { AppIcons } from "../../../resources/icons";
 import SpacingDivider from "../../../components/atoms/spacing-divider/spacing-divider";
 import InputField from "../../../components/atoms/input-field/input-field";
 import { Text } from "../../../components/atoms/text/text";

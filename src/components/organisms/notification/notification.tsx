@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AppIcons } from "../../../assets/icons";
+import { AppIcons } from "../../../resources/icons";
 import FlexContainer from "../../atoms/flex-container/flex-container";
 import { IconAction } from "../../atoms/icon-action/icon-action";
 import { Text } from "../../atoms/text/text";
