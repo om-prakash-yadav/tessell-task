@@ -3,8 +3,8 @@ import FlexContainer from "../components/atoms/flex-container/flex-container";
 import HeaderTitle from "../components/organisms/header-title/header-title";
 import Header from "../components/organisms/header/header";
 import SpacingDivider from "../components/atoms/spacing-divider/spacing-divider";
-import AdditionalSettingsSection from "./sections/additional-settings-section/additional-settings-section";
-import ServiceDetailsSection from "./sections/service-details-section/service-details-section";
+import { AdvancedConfigurationPanel } from "./sections/advanced-config-panel";
+import ApplicationConfigurationPanel from "./sections/application-configuration-panel/application-configuration-panel";
 import StepsSection from "./sections/steps-section/steps-section";
 import * as S from "./common-style";
 import { useProvisioning } from "./use-provisioning";
@@ -57,8 +57,8 @@ const ProvisioningComp: React.FC = () => {
           />
         </S.CreateServiceSectionWrapper>
         <FlexContainer flexValue={1} spacing={20} flexDirection="column">
-          <ServiceDetailsSection />
-          <AdditionalSettingsSection />
+          <ApplicationConfigurationPanel />
+          <AdvancedConfigurationPanel />
         </FlexContainer>
       </S.ContentArea>
       <SpacingDivider verticalSizeMultiplier={2} />

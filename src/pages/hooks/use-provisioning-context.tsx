@@ -1,10 +1,10 @@
 import { createContext, useContext } from "react";
-import type useAdditionalSettingsSection from "./use-additional-settings-section";
-import type useServiceDetailsSection from "./use-service-details-section";
+import type useAdvancedConfigurationPanel from "./use-advanced-config-panel";
+import type useApplicationConfigurationPanel from "./use-application-configuration-panel";
 
 type PageContextType = {
-  additionalSection: ReturnType<typeof useAdditionalSettingsSection>;
-  serviceSection: ReturnType<typeof useServiceDetailsSection>;
+  additionalSection: ReturnType<typeof useAdvancedConfigurationPanel>;
+  serviceSection: ReturnType<typeof useApplicationConfigurationPanel>;
 };
 
 export const ProvisioningContext = createContext<PageContextType | undefined>(

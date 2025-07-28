@@ -14,10 +14,9 @@ export const useProvisioning = () => {
 
   const handleServiceSubmit = useCallback(async () => {
     setIsLoading(true);
-    const res = await serviceSection.handleSubmit();
+    const res = await serviceSection.executeFormSubmission();
     if (res) {
       setCurrentStepIndex(1);
-      serviceSection.scrollIntoView();
     }
     setIsLoading(false);
   }, [serviceSection]);
