@@ -23,7 +23,7 @@ const ProvisioningComp: React.FC = () => {
       <Header
         credits={777}
         userAvatarSrc={
-          "https://i.pinimg.com/236x/8c/52/14/8c5214d30329d77c9564ab31fd9d0579.jpg"
+          "https://avatars.githubusercontent.com/u/72172954?v=4"
         }
         breadcrumbs={[
           { label: "Provisioning" },

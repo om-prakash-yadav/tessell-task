@@ -6,14 +6,9 @@ import SpacingDivider from "../../atoms/spacing-divider/spacing-divider";
 import { IconAction } from "../../atoms/icon-action/icon-action";
 import ProfileImage from "../../atoms/ProfileImage/ProfileImage";
 import FlexContainer from "../../atoms/flex-container/flex-container";
-import { GITHUB_LINK } from "../../constants/constants";
 import { ThemeSpacing } from "../../../theme/theme";
 
-/**
- * There is a static part to the header, that doesn't change.
- * The left part where we show Breadcrums is dynamic, it changes from page to page.
- * The right part is static, the icons, the avatars remain as is.
- */
+
 const Header: React.FC<HeaderProps> = ({
   breadcrumbs,
   credits,
@@ -37,8 +32,8 @@ const Header: React.FC<HeaderProps> = ({
         className="header-icon-content"
       >
         <Text
-          $renderAs="bodyXs"
-          $marginHorizontal="8px"
+          $renderAs="Text-body/primary/primary"
+          $marginHorizontal={`calc(0.5 * ${ThemeSpacing.variables.GUTTER})`}
         >
           Credits: ${credits ?? 0}
         </Text>
@@ -53,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({
           <IconAction
             accessibilityLabel="Announcement"
             iconKey="Announcement"
-            buttonScale="large"
+            buttonScale="medium"
             buttonStyle="secondary"
           />
         </FlexContainer>
@@ -67,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({
           <IconAction
             accessibilityLabel="FAQ"
             iconKey="QuestionMark"
-            buttonScale="large"
+            buttonScale="medium"
             buttonStyle="secondary"
           />
         </FlexContainer>
@@ -81,19 +76,19 @@ const Header: React.FC<HeaderProps> = ({
           <IconAction
             accessibilityLabel="Notifications"
             iconKey="Bell"
-            buttonScale="large"
+            buttonScale="medium"
             buttonStyle="secondary"
           />
         </FlexContainer>
       </FlexContainer>
       
-      <SpacingDivider dividerWidth={1} />
+      <SpacingDivider horizontalSizeMultiplier={1} />
       
       <ProfileImage
         size="small"
         alt="User Avatar"
         src={userAvatarSrc}
-        onClick={() => window.open(GITHUB_LINK, "_blank")}
+        onClick={() => {}}
       />
     </FlexContainer>
   );
