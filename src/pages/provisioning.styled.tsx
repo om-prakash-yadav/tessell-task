@@ -45,10 +45,10 @@ interface ContentContainerProps {
   $paddingRightX?: number;
 }
 
-export const ContentContainer: React.FC<ContentContainerProps> = ({ 
+export const ContentContainer = React.forwardRef<HTMLDivElement, ContentContainerProps>(({ 
   children, 
   $paddingRightX = 1 
-}) => {
+}, ref) => {
   const styles: React.CSSProperties = {
     position: 'relative',
     backgroundColor: ThemeColors["surface-0"],
@@ -59,8 +59,8 @@ export const ContentContainer: React.FC<ContentContainerProps> = ({
     paddingRight: `calc(${$paddingRightX} * ${ThemeSpacing.variables.GUTTER})`,
   };
 
-  return <div style={styles}>{children}</div>;
-};
+  return <div ref={ref} style={styles}>{children}</div>;
+});
 
 export const LoadingOverlay: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const styles: React.CSSProperties = {
